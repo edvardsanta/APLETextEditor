@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define EXIT_SUCCESS 0
-void save_text(char *filename, char *text)
+void save_text(char *text, char *filename)
 {
   // check if filename has txt extension
   int filenameLen = strlen(filename);
@@ -24,7 +24,7 @@ void save_text(char *filename, char *text)
 }
 
 
-void input_text(char* filename, char* text)
+void input_text(char* text, char* filename)
 {
   char c;
   int iterator = 0;
@@ -46,7 +46,7 @@ void input_text(char* filename, char* text)
   {
       printf("Enter filename: \n");
       scanf("%s", filename);
-      save_text(filename, text);   
+      save_text(text, filename);   
   }
   printf("\nBye\n");
 }
@@ -76,5 +76,8 @@ int main(void)
        printf("Invalid number");
        break;
   }
+
+  //printf("%s", filename);
+  //printf("%s", text);
   return EXIT_SUCCESS;
 }
